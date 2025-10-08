@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  overflow-x: hidden;
+  line-height: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Hero Section */
+.hero {
+  background-image: url("images/HERO_IMAGE.jpg");
+  background-size: cover;   /* Makes image cover the whole div */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repetition */
+  width: 100%;  
+  min-height: 100vh; 
+}
+
+
+/* Gallery Section */
+.gallery {
+  background: #eee;
+}
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.grid img {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  opacity: 0.7;
+  object-fit: cover; /* Add this line */
+}
+.load-more {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 20px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 10%;
+  text-align: center;
+}
+.load-more:hover{
+  transform: scale(1.02);
+  transition: 0.3s;
+  background-color: #782224;
+  color: white;
+}
+/* contact */
+#contact{
+  text-align: center;
+  padding: 30px 0px 30px 0px;
+  line-height: 30px;
+}
+#contact:hover{
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+
+/* Why Choose Section */
+.why-choose {
+  background: #333;   /* Green background */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.why-choose h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;   /* Wraps on smaller screens */
+}
+
+.stat-box {
+  flex: 1 1 200px;
+  min-width: 150px;
+}
+
+.stat-box h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.stat-box p {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* How it Works Section */
+.how-it-works {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.how-it-works h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.steps_line{
+  display: block;
+  height: 50%;
+  border-bottom: dashed 2px #333;
+  z-index: -11;
+}
+
+.step {
+  flex: 1 1 150px;
+  text-align: center;
+  margin: 20px;
+  position: relative;
+}
+
+.step .icon {
+  font-size: 2.5em;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.step p {
+  font-size: 1em;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Line behind steps */
+    .steps::before {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-top: 2px dashed #ccc;
+      z-index: -11;
+      margin: 0 100px 40px 100px;
+    }
+
+/* raw material brands */
+
+    .brands-section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .brands-section h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .brands-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap; /* responsive */
+    }
+
+    .brand {
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      height: 150px;
+      width: auto;
+      font-size: 20px;
+      font-weight: bold;
+      color: #4CAF50;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .brand img{
+      height: 150px;
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .brand:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    /* social media icons */
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 30px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: #333;
+  transition: 0.3s;
+}
+
+ #insta:hover {
+  border-radius: 35%;
+  font-size: 30px;
+  background: radial-gradient(
+  circle at 30% 107%,
+  #fdf497 0%,
+  #fdf497 5%,
+  #fd5949 45%,
+  #d6249f 60%,
+  #285AEB 90%
+);
+}
+#yt:hover{
+  color: #FF0000;
+}
+#facebook:hover{
+  color: #1877F2;
+}
+
+
+/* ========================================= */
+/* RESPONSIVE STYLES            */
+/* ========================================= */
+
+/* For tablets and smaller devices (768px and below) */
+@media (max-width: 768px) {
+  /* Make packages stack vertically */
+  .packages .container {
+    flex-direction: column;
+    align-items: center; /* Center the packages in the container */
+    gap: 30px; /* Add more space between stacked items */
+  }
+
+  .package {
+    width: 80%; /* Give each package a consistent width */
+    flex: none; /* Reset the flex property */
+  }
+
+  /* Make the 'Explore' button larger and more clickable */
+  .load-more {
+    width: 40%;
+    padding: 15px;
+  }
+
+  /* Adjust font sizes for better readability */
+  .package h2 {
+    font-size: 1.3em;
+  }
+  .price {
+    font-size: 1.1em;
+  }
+}
+
+/* For mobile phones (480px and below) */
+@media (max-width: 480px) {
+  .package {
+    width: 90%; /* Make packages even wider on small phones */
+  }
+
+  .load-more {
+    width: 50%;
+  }
+}

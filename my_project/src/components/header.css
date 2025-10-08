@@ -1,0 +1,38 @@
+/* Global Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  overflow-x: hidden;
+  line-height: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Top Contact Bar */
+
+.top-bar {
+  background-color: #333;
+  color: white;
+  position: static;
+  padding: 10px 20px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: white 1px solid;
+}
+
+#name{
+  padding-top: 20px;
+  align-items: start;
+  padding-left: 0;
+  margin-left: 0;
+}

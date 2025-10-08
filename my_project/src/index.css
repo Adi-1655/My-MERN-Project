@@ -1,0 +1,6 @@
+@import "tailwindcss";
+/* Add this to your main stylesheet */
+.social-icons {
+  padding: 40px 0;
+  background-color: #f8f8f8; /* Optional: gives the section a light grey background */
+}

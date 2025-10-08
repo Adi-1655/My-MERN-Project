@@ -1,0 +1,54 @@
+/* Global Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  overflow-x: hidden;
+  line-height: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🔹 Footer */
+footer.footer-cta {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px 10px;
+  text-align: center;
+  margin-top: 60px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 100%;
+}
+
+footer.footer-cta h3 {
+  margin : 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+footer.footer-cta p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+footer.footer-cta a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00c2ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer.footer-cta a:hover {
+  color: #00ffaa;
+  text-decoration: underline;
+}

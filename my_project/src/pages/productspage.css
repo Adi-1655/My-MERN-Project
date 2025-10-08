@@ -1,0 +1,154 @@
+/* Products Section */
+.products {
+  padding: 50px 5%;
+  text-align: center;
+}
+.products h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+}
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.product-card h3 {
+  margin: 15px 0 10px;
+  color: #222;
+}
+.product-card p {
+  font-size: 0.9em;
+  padding: 0 15px 20px;
+  color: #555;
+}
+
+/* Button styling */
+.open-btn {
+  padding: 8px 16px;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  border:1px solid red;
+  border-radius: 6px;
+  width: 70px;
+}
+.open-btn:hover {
+  background: #666;
+}
+
+/* ===============================
+   📱 RESPONSIVE DESIGN
+   =============================== */
+
+/* For Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  /* Top bar */
+  .top-bar {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 15px;
+  }
+  #name {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .free-estimate {
+    margin-bottom: 10px;
+  }
+}
+
+/* Hero section */
+  .hero {
+    height: 60vh;
+  }
+  .hero-content h1 {
+    font-size: 1.8em;
+    padding: 0 10px;
+  }
+  .features {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Packages */
+  .packages .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .package {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* Gallery */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .grid img {
+    height: 200px;
+  }
+
+  /* For Mobile Phones (≤ 600px) */
+@media (max-width: 600px) {
+  /* Hero */
+  .hero {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+  .estimate-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Packages */
+  .package h2 {
+    font-size: 1.2em;
+  }
+  .price {
+    font-size: 1em;
+  }
+
+  /* Gallery */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid img {
+    height: auto;
+  }
+
+  /* Contact */
+  #contact {
+    font-size: 14px;
+    padding: 20px;
+  }
+  #contact ul {
+    padding-left: 10px;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 90%;
+    margin: 20% auto;
+  }
+}
