@@ -1,59 +1,23 @@
-// src/components/SocialMediaIcons.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import "./socialmediaicons.css";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
-const SocialMediaIcons = ({ links = [] }) => {
+const SocialMediaIcons = () => {
+  const iconStyle = "text-3xl hover:text-black-500 transition-all duration-300";
+
   return (
-    <div className="social-icons">
-      {links.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={link.name}
-        >
-          <i className={link.iconClass} id={link.id}></i>
-        </a>
-      ))}
+    <div className="flex gap-6 justify-center mt-4">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <FaFacebook className={iconStyle} />
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" id="insta">
+        <FaInstagram className={iconStyle} />
+      </a>
+      <a href="https://youtube.com"  id="youtube">
+        <FaYoutube className={iconStyle} />
+      </a>
     </div>
   );
-};
-
-SocialMediaIcons.propTypes = {
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-      iconClass: PropTypes.string.isRequired,
-      id: PropTypes.string,
-    })
-  ),
-};
-
-SocialMediaIcons.defaultProps = {
-  links: [
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com",
-      iconClass: "fa-brands fa-instagram",
-      id: "insta",
-    },
-    {
-      name: "YouTube",
-      href: "https://www.youtube.com",
-      iconClass: "fa-brands fa-youtube",
-      id: "yt",
-    },
-    {
-      name: "Facebook",
-      href: "https://www.facebook.com",
-      iconClass: "fa-brands fa-facebook",
-      id: "facebook",
-    },
-  ],
 };
 
 export default SocialMediaIcons;
