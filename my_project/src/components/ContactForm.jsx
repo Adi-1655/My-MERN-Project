@@ -1,6 +1,6 @@
-// src/components/ContactForm.jsx
 import React, { useState } from "react";
 import "./contactform.css";
+import { submitContactForm } from "../services/api"; // 👈 import the helper
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -23,22 +23,13 @@ const ContactForm = () => {
       return;
     }
 
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    const result = await submitContactForm(formData);
 
-      if (res.ok) {
-        alert("Submitted successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      } else {
-        alert("Something went wrong. Try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Failed to submit. Server not reachable.");
+    if (result.success) {
+      alert("Submitted successfully!");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      alert("Something went wrong. Try again later.");
     }
   };
 
