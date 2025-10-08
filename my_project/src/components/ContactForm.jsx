@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./contactform.css";
-import { submitContactForm } from "../services/api"; // 👈 import the helper
+import { submitContactForm } from "../services/api.js"; // 👈 import the helper
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
