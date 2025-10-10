@@ -18,7 +18,7 @@ a {
 
 /* Hero Section */
 .hero {
-  background-image: url("./images/HERO_IMAGE.jpg");
+  background-image: url("../images/HERO_IMAGE.jpg");
   background-size: cover;   /* Makes image cover the whole div */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* Prevents repetition */
