@@ -17,7 +17,22 @@ a {
 }
 
 /* Top Contact Bar */
-
+#name{
+  height: 100%;
+  width:75%;
+  padding-left: 10px;
+  padding-top: 20px;
+  align-items: start;
+  padding-left: 0;
+  margin-left: 0;
+}
+#logo{
+  height: 11vh;
+  width: 28.5vh;
+  background-image: url("images/logo.png");
+  background-size: cover;
+  background-position: center;
+}
 .top-bar {
   background-color: #333;
   color: white;
@@ -28,11 +43,4 @@ a {
   align-items: center;
   justify-content: space-between;
   border-bottom: white 1px solid;
-}
-
-#name{
-  padding-top: 20px;
-  align-items: start;
-  padding-left: 0;
-  margin-left: 0;
 }

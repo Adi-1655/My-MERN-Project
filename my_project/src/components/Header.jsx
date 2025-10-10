@@ -4,10 +4,9 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <div className="top-bar">
-      <div id="name">
-        <h1>SHIVAM HOME INTERIOR</h1>
-      </div>
+    <div class="top-bar">
+    <div id="logo">
+    </div>
       <div className="free-estimate">
         <a href="/contact" className="open-btn">
           Free consultation
