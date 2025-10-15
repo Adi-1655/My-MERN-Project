@@ -1,16 +1,16 @@
-// src/components/Header.jsx
 import React from "react";
+import { Link } from "react-router-dom"; // 👈 1. Import Link
 import "./header.css";
 
 const Header = () => {
   return (
-    <div class="top-bar">
-    <div id="logo">
-    </div>
+    <div className="top-bar">
+      <div id="logo"></div>
       <div className="free-estimate">
-        <a href="/contact" className="open-btn">
+        {/* 👇 2. Change <a> to <Link> and href to to */}
+        <Link to="/contact" className="open-btn">
           Free consultation
-        </a>
+        </Link>
       </div>
     </div>
   );
