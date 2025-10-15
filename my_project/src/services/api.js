@@ -1,6 +1,6 @@
 // src/services/api.js
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = 'https://mern-project-o478.onrender.com';
 
 // Send contact form data to backend
 export async function submitContactForm(formData) {
