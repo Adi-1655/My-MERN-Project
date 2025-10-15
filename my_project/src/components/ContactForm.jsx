@@ -1,80 +1,90 @@
-import React, { useState } from "react";
-import "./contactform.css";
-import { submitContactForm } from "../services/api.js"; // 👈 import the helper
+// src/components/ContactForm.jsx
+import React, { useState } from 'react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
+  const [status, setStatus] = useState(''); // To display success or error messages
 
+  // Update state when user types in an input field
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
+  // Handle the form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default browser refresh
+    setStatus('Sending...');
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      alert("Please enter a valid email address");
-      return;
-    }
+    try {
+      // The fetch request that sends data to your backend
+      const response = await fetch('https://my-mern-project-2.onrender.com/contact', { // 👈 Make sure this URL is correct!
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Tell the server we're sending JSON
+        },
+        body: JSON.stringify(formData), // Convert the form data object to a JSON string
+      });
 
-    const result = await submitContactForm(formData);
-
-    if (result.success) {
-      alert("Submitted successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } else {
-      alert("Something went wrong. Try again later.");
+      if (response.ok) {
+        setStatus('Form submitted successfully!');
+        setFormData({ name: '', email: '', message: '' }); // Clear the form
+      } else {
+        const errorData = await response.json();
+        setStatus(`Error: ${errorData.error || 'Something went wrong.'}`);
+      }
+    } catch (error) {
+      console.error('Fetch Error:', error);
+      setStatus('Failed to send. Please check your connection.');
     }
   };
 
   return (
-    <div
-      className="contact-form-wrapper"
-      style={{ backgroundImage: "url(/images/form_bg.jpg)" }}
-    >
-      <div className="contact-form-container">
-        <h2 className="contact-form-title">Get Free Consultation</h2>
-        <form onSubmit={handleSubmit} className="contact-form">
+    <div>
+      <h2>Contact Us</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
+            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Your Name"
             required
           />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
+            id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Your Email"
             required
           />
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Your Phone"
-          />
+        </div>
+        <div>
+          <label htmlFor="message">Message:</label>
           <textarea
+            id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Your Message"
             required
-            rows="6"
           />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      {status && <p>{status}</p>}
     </div>
   );
 };
