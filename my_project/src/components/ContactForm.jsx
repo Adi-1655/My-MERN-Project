@@ -1,4 +1,5 @@
-// src/components/ContactForm.jsx
+// my-project/src/components/ContactForm.jsx
+
 import React, { useState } from "react";
 import "./contactform.css";
 
@@ -24,8 +25,8 @@ const ContactForm = () => {
     }
 
     try {
-      // The fetch request now points to your live Render URL
-      const response = await fetch('https://my-mern-project-2.onrender.com/contact', {
+      // Use the correct live Render URL with the "/api" prefix
+      const response = await fetch('https://my-mern-project-2.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
