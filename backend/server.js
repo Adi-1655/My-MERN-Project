@@ -16,7 +16,7 @@ app.use(express.json());
 // Allow frontend requests
 app.use(
   cors({
-    origin: "https://dainty-choux-4c343f.netlify.app" || "http://localhost:5173", // Vite usually runs on 5173
+    origin: "https://dainty-choux-4c343f.netlify.app" || "http://localhost:5173" || "https://my-mern-project-xi.vercel.app", // Vite usually runs on 5173
     methods: ["GET", "POST"],
     credentials: true,
   })
