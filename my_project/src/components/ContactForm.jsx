@@ -26,7 +26,7 @@ const ContactForm = () => {
 
     try {
       // Direct backend API call using fetch
-      const response = await fetch('http://localhost:5000/contact', { // 👈 Make sure this URL is correct!
+      const response = await fetch('https://my-mern-project-2.onrender.com/contact', { // 👈 Make sure this URL is correct!
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
