@@ -1,4 +1,4 @@
-//component location - my_project/src/components/ContactForm.jsx
+// src/components/ContactForm.jsx
 import React, { useState } from "react";
 import "./contactform.css";
 
@@ -14,7 +14,6 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // --- The handleSubmit function is the only part that has been changed ---
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,8 +24,8 @@ const ContactForm = () => {
     }
 
     try {
-      // Direct backend API call using fetch
-      const response = await fetch('https://my-mern-project-2.onrender.com/contact', { // 👈 Make sure this URL is correct!
+      // The fetch request now points to your live Render URL
+      const response = await fetch('https://my-mern-project-2.onrender.com/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,14 +35,11 @@ const ContactForm = () => {
 
       if (response.ok) {
         alert("Submitted successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form on success
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        // Handle server-side errors (e.g., validation failure)
-        const errorData = await response.json();
-        alert(`Error: ${errorData.error || 'Something went wrong. Try again later.'}`);
+        alert("Something went wrong. Try again later.");
       }
     } catch (error) {
-      // Handle network errors (e.g., server is down)
       console.error('Submission Error:', error);
       alert("Failed to connect to the server. Please try again later.");
     }
@@ -81,7 +77,6 @@ const ContactForm = () => {
             placeholder="Your Phone"
           />
           <textarea
-            name="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
